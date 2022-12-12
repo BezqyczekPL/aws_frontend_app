@@ -30,7 +30,7 @@ jobs:
           bezqyczekpl/lab:ebs_frontend
 
     - name: Generate deployment package
-      run: zip -r deploy.zip ./docker_compose.yml
+      run: zip -r deploy.zip . -x '*.git*'
 
     - name: Deploy to EB
       uses: einaregilsson/beanstalk-deploy@v21
